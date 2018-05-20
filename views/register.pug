@@ -1,0 +1,34 @@
+extends layout
+block content
+  h1 Cadastro
+  form(method='POST', action='')
+    label Tipo de conta
+    br
+    .btn-group.btn-group-toggle(data-toggle='buttons')
+      br 
+      br
+      label.btn.btn-secondary(autocomplete='off' disabled) Passageiro
+        input#teste(name='tipo', type='radio' value='Passageiro')
+    #form-group
+      label Nome: 
+      input.form-control(name='nome', type='text')
+    #form-group
+      label Email: 
+      input.form-control(name='email', type='text')
+    #form-group
+      label Usuario: 
+      input.form-control(name='usuario', type='text')
+    #form-group
+      label Senha: 
+      input.form-control(name='senha', type='password')
+    #form-group
+      label CPF: 
+      input.form-control(name='cpf', type='text')        
+    #form-group
+      label Data de nascimento: 
+      input.form-control(name='data_nasc', type='text')
+    #form-group
+      label Sexo:
+      input.form-control(name='sexo', type='text')
+    br        
+    input.btn.btn-primary(type='submit', value='Confirmar')    

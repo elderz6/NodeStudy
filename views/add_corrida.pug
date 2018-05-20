@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/corridas/add')
+    #form-group
+      label Passageiro: 
+      input.form-control(name='passageiro', type='text')
+    #form-group
+      label Motorista: 
+      input.form-control(name='motorista', type='text')
+    #form-group
+      label valor: 
+      input.form-control(name='valor', type='text')
+    input.btn.btn-primary(type='submit', value='Confirmar')    

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 #{title}
+  each corrida, i in corridas
+    ul.list-group-item  
+      a(href='/corridas/'+corrida._id)
+        if corrida.status == 1
+          li Corrida Confirmada
+        else
+          li Corrida Cancelada

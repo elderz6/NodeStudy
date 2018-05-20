@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  if corrida.status == 1
+    h1 Corrida Confirmada
+  else
+    h1 Corrida Cancelada
+  li Passageiro: #{corrida.passageiro} 
+  li Motorista:  #{corrida.motorista}
+  li Valor da corrida:  #{corrida.valor}    

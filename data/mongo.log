@@ -1,0 +1,13 @@
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] MongoDB starting : pid=28767 port=27017 dbpath=/home/zxvr/estagio/projeto/data/db 64-bit host=zrd2
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] db version v3.6.3
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] git version: 9586e557d54ef70f9ca4b43c26892cd55257e1a5
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.0g  2 Nov 2017
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] modules: none
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] build environment:
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten]     distarch: x86_64
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] options: { storage: { dbPath: "/home/zxvr/estagio/projeto/data/db", directoryPerDB: true }, systemLog: { destination: "file", logAppend: true, path: "/home/zxvr/estagio/projeto/data/mongo.log" } }
+2018-05-15T00:09:05.433-0300 E STORAGE  [initandlisten] Failed to set up listener: SocketException: Address already in use
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] now exiting
+2018-05-15T00:09:05.433-0300 I CONTROL  [initandlisten] shutting down with code:48
