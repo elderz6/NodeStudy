@@ -37,9 +37,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret:'beiruta1',
   resave:true,
-  saveUninitialized:true,
-  cookie:{secure:true}
+  saveUninitialized:true
 }));
+//express messages
+app.use(require('connect-flash')());
+app.use(function(req, res, next)
+{
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
 //home route------------------------------------------------------------------
 app.get('/', function(req, res)
 {

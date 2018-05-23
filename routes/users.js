@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const {check, validationResult} = require('express-validator/check');
+const{matchedData, sanitize} = require('express-validator/filter');
 //db models
 let User = require('../models/user');
 let Motorista = require('../models/motorista');
@@ -15,7 +17,7 @@ router.get('/motorista', function(req, res)
   res.render('motorista');
 });
 //subir motorista no banco---------------------------------
-router.post('/motorista', function(req, res)
+router.post('/motorista',[check('nome').isLength({min:1}).trim().withMessage('Preencha o nome')], function(req, res)
 {
   let motorista = new Motorista();
   motorista.status = req.body.status;
@@ -27,16 +29,34 @@ router.post('/motorista', function(req, res)
   motorista.cpf = req.body.cpf;
   motorista.data_nasc = req.body.data_nasc;
   motorista.sexo = req.body.sexo;
-  motorista.save(function(err)
+
+  const errors = validationResult(req);
+  if (!errors.isEmpty())
   {
-    if (err)
+      console.log(errors);
+      req.flash('danger', 'Ocorreu um erro');
+      res.render('motorista',
+      {
+        errors:errors.mapped()
+      });
+
+  }
+  else
+  {
+    motorista.save(function(err)
     {
-      console.log(err);
-      return;
-    }else {
-      res.redirect('/');
-    }
+      if (err)
+      {
+        console.log(err);
+        return;
+      }
+      else
+      {
+        req.flash('success', 'Cadastrado');
+        res.redirect('/');
+      }
   });
+}
 });
 //registrar usuario no banco---------------------------------
 router.post('/register', function(req, res)

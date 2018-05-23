@@ -19,6 +19,7 @@ html
           li.nav-item
             a.nav-link(href='/corridas/add') Nova Corrida            
     .container
+      != messages('message', locals)
       block content
       br
       hr
